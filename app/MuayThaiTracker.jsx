@@ -612,34 +612,44 @@ export default function App() {
                 {[
                   { name: "Pigeon Pose (chaque côté)", time: "60-90s/côté", target: "Fessiers + rotateurs externes de hanche",
                     desc: "Jambe avant pliée à 90° devant toi, jambe arrière tendue derrière. Descends le buste vers le sol. C'est LE stretch #1 pour les high kicks : il ouvre les rotateurs qui bloquent ta hanche quand tu montes la jambe.",
-                    tip: "Si c'est trop dur, rapproche le pied avant de ta hanche. À 198cm, tes longs fémurs rendent le pigeon plus difficile, sois patient." },
+                    tip: "Si c'est trop dur, rapproche le pied avant de ta hanche. À 198cm, tes longs fémurs rendent le pigeon plus difficile, sois patient.",
+                    video: "https://www.youtube.com/results?search_query=pigeon+pose+stretch+tutorial+hip+opener+fighters" },
                   { name: "Fente basse (Hip Flexor Stretch)", time: "60s/côté", target: "Psoas + quadriceps + hip flexors",
                     desc: "Genou arrière au sol, pied avant à plat, pousse les hanches EN AVANT. Garde le buste droit. Le psoas est le muscle qui LIMITE ta hauteur de kick : s'il est court, ta jambe ne monte pas.",
-                    tip: "Serre la fesse du côté de la jambe arrière pendant le stretch. Ça intensifie le stretch du psoas." },
+                    tip: "Serre la fesse du côté de la jambe arrière pendant le stretch. Ça intensifie le stretch du psoas.",
+                    video: "https://www.youtube.com/results?search_query=hip+flexor+lunge+stretch+psoas+tutorial+martial+arts" },
                   { name: "Hamstring Stretch debout", time: "45-60s/côté", target: "Ischio-jambiers",
                     desc: "Pied sur une surface à hauteur de hanche (rack, chaise). Jambe tendue, orteils vers le plafond. Penche le buste EN GARDANT LE DOS PLAT. C'est le dos plat qui stretch les ischios, pas le dos rond.",
-                    tip: "Si tu arrondis le dos, c'est les fessiers qui prennent, pas les ischios. Garde le dos plat même si tu descends moins bas." },
+                    tip: "Si tu arrondis le dos, c'est les fessiers qui prennent, pas les ischios. Garde le dos plat même si tu descends moins bas.",
+                    video: "https://www.youtube.com/results?search_query=standing+hamstring+stretch+elevated+leg+technique" },
                   { name: "Butterfly Stretch", time: "60-90s", target: "Adducteurs + aine",
                     desc: "Assis, plantes de pieds collées, genoux vers le sol. Pousse les genoux avec les coudes. Les adducteurs sont essentiels pour le roundhouse kick : s'ils sont raides, ta hanche ne tourne pas à fond.",
-                    tip: "Penche le buste EN AVANT (dos plat) pour intensifier. Plus les pieds sont proches du corps, plus le stretch est fort." },
+                    tip: "Penche le buste EN AVANT (dos plat) pour intensifier. Plus les pieds sont proches du corps, plus le stretch est fort.",
+                    video: "https://www.youtube.com/results?search_query=butterfly+stretch+groin+adductor+flexibility+tutorial" },
                   { name: "Straddle Stretch (écart facial)", time: "60-90s", target: "Adducteurs + aine + ischio-jambiers",
                     desc: "Assis, jambes écartées le plus possible, penche le buste au milieu puis vers chaque jambe. C'est la progression vers le grand écart facial. À ta taille, tes longues jambes donnent un levier énorme.",
-                    tip: "Alterne : centre 30s, droite 30s, gauche 30s. Expire en descendant. Ne force jamais avec les mains." },
+                    tip: "Alterne : centre 30s, droite 30s, gauche 30s. Expire en descendant. Ne force jamais avec les mains.",
+                    video: "https://www.youtube.com/results?search_query=middle+splits+straddle+stretch+progression+flexibility" },
                   { name: "Frog Stretch", time: "45-60s", target: "Adducteurs profonds + aine",
                     desc: "À quatre pattes, écarte les genoux le plus possible, pieds tournés vers l'extérieur. Descends les hanches vers le sol. Ce stretch cible les adducteurs profonds que le butterfly n'atteint pas.",
-                    tip: "Avance et recule doucement les hanches pour trouver l'angle le plus intense. Pas de douleur, juste de la tension." },
+                    tip: "Avance et recule doucement les hanches pour trouver l'angle le plus intense. Pas de douleur, juste de la tension.",
+                    video: "https://www.youtube.com/results?search_query=frog+stretch+deep+groin+adductor+hip+opener+tutorial" },
                   { name: "Quadriceps couché (chaque côté)", time: "45s/côté", target: "Quadriceps + hip flexors",
                     desc: "Allongé sur le côté, attrape le pied de la jambe du dessus et tire le talon vers la fesse. Pousse la hanche EN AVANT. Le quad est le moteur du kick, s'il est raide tu perds du snap.",
-                    tip: "Garde les genoux collés et la hanche poussée vers l'avant. C'est la hanche qui fait la différence, pas juste plier le genou." },
+                    tip: "Garde les genoux collés et la hanche poussée vers l'avant. C'est la hanche qui fait la différence, pas juste plier le genou.",
+                    video: "https://www.youtube.com/results?search_query=lying+side+quad+stretch+hip+flexor+technique" },
                   { name: "Lézard Pose (Lizard Stretch)", time: "45-60s/côté", target: "Hip flexors + adducteurs + aine",
                     desc: "Depuis la fente basse, pose les DEUX mains (ou avant-bras) à l'INTÉRIEUR du pied avant. Enfonce la hanche. Combine le stretch du psoas et des adducteurs en un seul mouvement.",
-                    tip: "Si tu arrives sur les avant-bras, c'est le niveau avancé. Sinon, reste sur les mains. Ouvre le genou avant vers l'extérieur." },
+                    tip: "Si tu arrives sur les avant-bras, c'est le niveau avancé. Sinon, reste sur les mains. Ouvre le genou avant vers l'extérieur.",
+                    video: "https://www.youtube.com/results?search_query=lizard+pose+stretch+hip+flexor+groin+tutorial+yoga" },
                   { name: "Split progressif (frontal)", time: "60s", target: "Ischio-jambiers + hip flexors + aine",
                     desc: "Depuis la fente basse, glisse le pied avant vers l'avant et le genou arrière vers l'arrière. Descends aussi bas que possible. C'est la progression ultime vers le grand écart.",
-                    tip: "Utilise des blocs ou des livres sous les mains pour te stabiliser. Descends 1mm de plus chaque semaine. La constance bat l'intensité." },
+                    tip: "Utilise des blocs ou des livres sous les mains pour te stabiliser. Descends 1mm de plus chaque semaine. La constance bat l'intensité.",
+                    video: "https://www.youtube.com/results?search_query=front+splits+progression+tutorial+martial+arts+flexibility" },
                   { name: "Mollets (mur)", time: "30s/côté", target: "Gastrocnémien + soléaire",
                     desc: "Face au mur, un pied devant l'autre. Talon arrière collé au sol, pousse le mur. Puis plie le genou arrière pour le soléaire. Le pivot du pied d'appui pendant le kick dépend de la souplesse des mollets.",
-                    tip: "Fais les deux versions : jambe tendue (gastro) + jambe pliée (soléaire). 30s chaque." },
+                    tip: "Fais les deux versions : jambe tendue (gastro) + jambe pliée (soléaire). 30s chaque.",
+                    video: "https://www.youtube.com/results?search_query=calf+stretch+wall+gastrocnemius+soleus+technique" },
                 ].map((stretch, i) => {
                   const isOpen = openSection === `stretch_${i}`;
                   return (
@@ -659,10 +669,18 @@ export default function App() {
                       {isOpen && (
                         <div style={{ padding: "0 12px 12px" }}>
                           <div style={{ fontSize: 12, color: textSecondary, lineHeight: 1.6, marginBottom: 8 }}>{stretch.desc}</div>
-                          <div style={{ background: "#7C3AED08", borderRadius: 6, padding: "6px 10px", borderLeft: "3px solid #7C3AED30" }}>
+                          <div style={{ background: "#7C3AED08", borderRadius: 6, padding: "6px 10px", borderLeft: "3px solid #7C3AED30", marginBottom: 8 }}>
                             <div style={{ fontSize: 10, fontWeight: 700, color: "#7C3AED", marginBottom: 2 }}>💡 ASTUCE</div>
                             <div style={{ fontSize: 11, color: "#78716C", lineHeight: 1.5 }}>{stretch.tip}</div>
                           </div>
+                          <a href={stretch.video} target="_blank" rel="noopener noreferrer" style={{
+                            display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 6,
+                            background: "#7C3AED08", border: "1px solid #7C3AED15", textDecoration: "none",
+                          }}>
+                            <span style={{ fontSize: 14 }}>▶️</span>
+                            <span style={{ fontSize: 12, fontWeight: 600, color: "#7C3AED", flex: 1 }}>Voir la démo vidéo</span>
+                            <span style={{ fontSize: 10, color: textMuted }}>YouTube ↗</span>
+                          </a>
                         </div>
                       )}
                     </div>
