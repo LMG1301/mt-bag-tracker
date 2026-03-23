@@ -596,8 +596,11 @@ export default function App() {
               <div style={{ width: 36, height: 36, borderRadius: 10, display: "flex", alignItems: "center", justifyContent: "center", background: "#7C3AED12", color: "#7C3AED", fontSize: 16 }}>🧘</div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: textPrimary }}>Étirements Post-Séance</div>
-                <div style={{ fontSize: 11, color: textMuted }}>10-15 min · Flexibilité kicks · Tiens 45-90s chaque</div>
+                <div style={{ fontSize: 11, color: textMuted }}>10-15 min · {Array.from({length:10}).filter((_,i) => dataRef.current[`stretch_${i}`]).length}/10 complétés</div>
               </div>
+              {(() => { const done = Array.from({length:10}).filter((_,i) => dataRef.current[`stretch_${i}`]).length; const pct = Math.round(done/10*100); return pct > 0 ? (
+                <div style={{ fontSize: 13, fontWeight: 800, color: pct >= 80 ? "#16A34A" : pct >= 50 ? "#7C3AED" : textMuted }}>{pct}%</div>
+              ) : null; })()}
               <span style={{ fontSize: 12, color: textMuted, transition: "transform 0.2s", transform: openRound === "stretch" ? "rotate(180deg)" : "rotate(0)" }}>▾</span>
             </div>
 
@@ -652,19 +655,25 @@ export default function App() {
                     video: "https://www.youtube.com/results?search_query=calf+stretch+wall+gastrocnemius+soleus+technique" },
                 ].map((stretch, i) => {
                   const isOpen = openSection === `stretch_${i}`;
+                  const stretchDone = dataRef.current[`stretch_${i}`];
                   return (
                     <div key={i} style={{
-                      background: isOpen ? "#FAFAFF" : cardBg, borderRadius: 10, marginBottom: 6, overflow: "hidden",
-                      border: `1px solid ${isOpen ? "#7C3AED25" : border}`, transition: "all 0.2s",
+                      background: stretchDone ? "#F0FDF4" : isOpen ? "#FAFAFF" : cardBg, borderRadius: 10, marginBottom: 6, overflow: "hidden",
+                      border: `1px solid ${stretchDone ? "#16A34A40" : isOpen ? "#7C3AED25" : border}`, transition: "all 0.2s",
                     }}>
-                      <div onClick={() => setOpenSection(isOpen ? null : `stretch_${i}`)}
-                        style={{ padding: "10px 12px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10 }}>
-                        <div style={{ width: 28, height: 28, borderRadius: 8, background: "#7C3AED10", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 800, color: "#7C3AED", flexShrink: 0 }}>{i + 1}</div>
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontSize: 13, fontWeight: 700, color: textPrimary }}>{stretch.name}</div>
+                      <div style={{ padding: "10px 12px", display: "flex", alignItems: "center", gap: 10 }}>
+                        <div onClick={(e) => { e.stopPropagation(); persist({ [`stretch_${i}`]: !stretchDone }); }}
+                          style={{
+                            width: 28, height: 28, borderRadius: 8, flexShrink: 0, cursor: "pointer",
+                            background: stretchDone ? "#16A34A" : "#7C3AED10",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            fontSize: stretchDone ? 14 : 13, fontWeight: 800, color: stretchDone ? "#fff" : "#7C3AED",
+                          }}>{stretchDone ? "✓" : i + 1}</div>
+                        <div onClick={() => setOpenSection(isOpen ? null : `stretch_${i}`)} style={{ flex: 1, minWidth: 0, cursor: "pointer" }}>
+                          <div style={{ fontSize: 13, fontWeight: 700, color: stretchDone ? "#16A34A" : textPrimary, textDecoration: stretchDone ? "line-through" : "none" }}>{stretch.name}</div>
                           <div style={{ fontSize: 10, color: textMuted }}>{stretch.time} · {stretch.target}</div>
                         </div>
-                        <span style={{ fontSize: 11, color: textMuted, transition: "transform 0.2s", transform: isOpen ? "rotate(180deg)" : "rotate(0)" }}>▾</span>
+                        <span onClick={() => setOpenSection(isOpen ? null : `stretch_${i}`)} style={{ fontSize: 11, color: textMuted, transition: "transform 0.2s", transform: isOpen ? "rotate(180deg)" : "rotate(0)", cursor: "pointer" }}>▾</span>
                       </div>
                       {isOpen && (
                         <div style={{ padding: "0 12px 12px" }}>
@@ -686,25 +695,6 @@ export default function App() {
                     </div>
                   );
                 })}
-
-                {/* Video links */}
-                <div style={{ marginTop: 8, borderTop: `1px solid ${border}`, paddingTop: 10 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: textMuted, letterSpacing: 1, marginBottom: 6 }}>🎬 VIDÉOS ÉTIREMENTS</div>
-                  {[
-                    { label: "🔍 Stretching post Muay Thai", url: "https://www.youtube.com/results?search_query=muay+thai+post+training+stretching+routine+flexibility" },
-                    { label: "🔍 Hip flexibility pour high kicks", url: "https://www.youtube.com/results?search_query=hip+flexibility+stretches+high+kick+muay+thai" },
-                    { label: "🔍 Pigeon pose pour fighters", url: "https://www.youtube.com/results?search_query=pigeon+pose+stretch+fighters+hip+opener+muay+thai" },
-                    { label: "🔍 Splits progression combat sports", url: "https://www.youtube.com/results?search_query=splits+progression+flexibility+routine+martial+arts+kickboxing" },
-                  ].map((v, i) => (
-                    <a key={i} href={v.url} target="_blank" rel="noopener noreferrer" style={{
-                      display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", borderRadius: 8,
-                      border: `1px solid ${border}`, textDecoration: "none", marginBottom: 4,
-                    }}>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: "#7C3AED" }}>{v.label}</span>
-                      <span style={{ marginLeft: "auto", fontSize: 10, color: textMuted }}>↗</span>
-                    </a>
-                  ))}
-                </div>
               </div>
             )}
           </div>
